@@ -24,7 +24,7 @@ class rnsa:
         self.detectors = []
     
     def fit(self, X_normal):
-        max_detectors = 40 # Maximum number of detectors allowed
+        max_detectors = 1000 # Maximum number of detectors allowed, you can change this to increase accuracy
         for _ in range(max_detectors):  # Maximum number of detectors allowed
             candidate_detector = np.random.uniform(low=-5, high=4, size=X_normal.shape[1]) # Generate a random detector
             distances = [distance.euclidean(candidate_detector, x) for x in X_normal] # Distance of the detector from all self points
