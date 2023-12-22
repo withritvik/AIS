@@ -17,7 +17,7 @@ y = np.hstack([y, np.ones(anomalous_data.shape[0])])
 # Split the combined data into test and train data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-class rnsa:
+class vdnsa:
     
     # Initialize the class
     def __init__(self):
@@ -61,7 +61,7 @@ class rnsa:
             predictions.append(int(is_anomaly))
         return np.array(predictions)
 
-model = rnsa() # Running the model
+model = vdnsa() # Running the model
 model.fit(X_train[y_train == 0]) # Fit the model on the normal data
 y_pred = model.predict(X_test) # Predict on the test data 
 print(f"Accuracy: {np.mean(y_pred == y_test) * 100} %") # Print the accuracy
